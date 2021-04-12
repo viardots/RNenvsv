@@ -1,4 +1,4 @@
-#!/bin/bash
+#/bin/bash
 yum install -y wget unzip java-1.8.0-openjdk-devel.x86_64
 wget https://dl.google.com/android/repository/commandlinetools-linux-6858069_latest.zip
 mkdir -p /android/cmdline-tools
@@ -15,7 +15,7 @@ echo 'export PATH=/node-v14.16.0-linux-x64/bin:$PATH' >> $HOME/.androidrc
 echo 'export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.282.b08-2.el8_3.x86_64' >> $HOME/.androidrc
 echo 'source $HOME/.androidrc' >> $HOME/.bash_profile
 source $HOME/.androidrc 
-echo -e 'y\ny\ny\ny\ny\ny\ny\ny\n' | sdkmanager --licenses
+yes | sdkmanager --licenses
 sdkmanager emulator
 sdkmanager "platforms;android-28"
 sdkmanager "build-tools;28.0.3"
@@ -30,3 +30,5 @@ wget https://nodejs.org/dist/v14.16.0/node-v14.16.0-linux-x64.tar.xz
 tar xvJf node-v14.16.0-linux-x64.tar.xz 
 npm install -g reactnative
 npm install -g detox-cli
+rm *.xz *.zip
+
