@@ -1,5 +1,4 @@
 #/bin/bash
-yum install -y wget unzip java-1.8.0-openjdk-devel.x86_64 make python38
 cd /tmp
 wget https://dl.google.com/android/repository/commandlinetools-linux-6858069_latest.zip
 mkdir -p /home/rnuser/android/cmdline-tools
@@ -12,7 +11,8 @@ echo 'export PATH=$ANDROID_HOME/platform-tools:$PATH' >> $HOME/.androidrc
 echo 'export PATH=$ANDROID_HOME/emulator:$PATH' >> $HOME/.androidrc
 echo 'export PATH=$ANDROID_HOME/cmdline-tools/tools/bin:$PATH' >> $HOME/.androidrc
 echo 'export PATH=/home/rnuser/node-v14.16.0-linux-x64/bin:$PATH' >> $HOME/.androidrc
-echo 'export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.282.b08-2.el8_3.x86_64' >> $HOME/.androidrc
+echo 'export JAVA_HOME=/usr/lib/jvm/java-11' >> $HOME/.androidrc
+echo 'export PATH=$JAVA_HOME/bin:$PATH' >> $HOME/.androidrc
 echo 'source $HOME/.androidrc' >> $HOME/.bash_profile
 source $HOME/.androidrc 
 yes | sdkmanager --licenses
